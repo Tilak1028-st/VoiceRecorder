@@ -15,6 +15,7 @@ class RecorderViewController: UIViewController {
     @IBOutlet weak var recordListTableView: UITableView!
     var recordingSession: AVAudioSession!
     var audioRecoder: AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer!
     var numberOfRecords = 0
 
     
@@ -99,5 +100,15 @@ extension RecorderViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let path = getFileDirectory()?.appendingPathComponent("\(indexPath.row).m4a")
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: path!)
+            audioPlayer.play()
+        }
+        catch {
+            
+        }
+    }
 }
