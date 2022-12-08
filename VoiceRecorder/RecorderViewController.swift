@@ -32,7 +32,7 @@ class RecorderViewController: UIViewController {
     
     
     @IBAction func diTapOnRecordButton(_ sender: Any) {
-       
+        micButton.backgroundColor = UIColor.red
         if audioRecoder == nil {
             let fileName = getFileDirectory()?.appendingPathComponent("\(numberOfRecords).m4a")
             
@@ -53,6 +53,7 @@ class RecorderViewController: UIViewController {
             
             UserDefaults.standard.set(numberOfRecords, forKey: "Mynumber")
             recordListTableView.reloadData()
+            micButton.backgroundColor = UIColor.green
         }
     }
     
