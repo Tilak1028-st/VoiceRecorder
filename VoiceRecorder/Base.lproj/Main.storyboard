@@ -19,6 +19,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwu-xr-hro">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kfz-7E-CBP">
+                                        <rect key="frame" x="0.0" y="95.5" width="414" height="673.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ITm-KN-J47" style="IBUITableViewCellStyleDefault" id="2aJ-sI-IBJ">
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2aJ-sI-IBJ" id="tVE-Gc-75J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ITm-KN-J47">
+                                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="0.75294117650000003" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="n3l-d9-msC"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="9cb-5a-LWX"/>
+                                        </connections>
+                                    </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-8p-GBg">
                                         <rect key="frame" x="177" y="779" width="60" height="60"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -42,9 +69,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ndc-JF-Mzh" firstAttribute="top" secondItem="Hwu-xr-hro" secondAttribute="topMargin" id="BPA-k8-Bdt"/>
+                                    <constraint firstItem="Kfz-7E-CBP" firstAttribute="leading" secondItem="Hwu-xr-hro" secondAttribute="leading" id="Mm8-I1-ER1"/>
+                                    <constraint firstItem="BlO-8p-GBg" firstAttribute="top" secondItem="Kfz-7E-CBP" secondAttribute="bottom" constant="10" id="Ube-64-NNO"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="BlO-8p-GBg" secondAttribute="bottom" constant="15" id="Xag-az-gkz"/>
                                     <constraint firstItem="BlO-8p-GBg" firstAttribute="centerX" secondItem="Hwu-xr-hro" secondAttribute="centerX" id="fX6-vw-XJh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kfz-7E-CBP" secondAttribute="trailing" id="gbB-FF-sqy"/>
                                     <constraint firstItem="ndc-JF-Mzh" firstAttribute="leading" secondItem="Hwu-xr-hro" secondAttribute="leadingMargin" id="ggI-Oy-c10"/>
+                                    <constraint firstItem="Kfz-7E-CBP" firstAttribute="top" secondItem="ndc-JF-Mzh" secondAttribute="bottom" constant="10" id="lGU-1H-elQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -59,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="micButton" destination="BlO-8p-GBg" id="hfl-k8-Oim"/>
+                        <outlet property="recordListTableView" destination="Kfz-7E-CBP" id="3Be-im-ZWw"/>
                         <outlet property="recorderView" destination="Hwu-xr-hro" id="c77-zS-Yvh"/>
                     </connections>
                 </viewController>
